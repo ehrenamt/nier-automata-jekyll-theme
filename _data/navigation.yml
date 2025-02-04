@@ -1,0 +1,15 @@
+nav:
+    -   name: HOME
+        url: index
+    -   name: MAP
+        url: image
+    -   name: ABOUT
+        url: about
+    -   name: BLOG
+        url: blog
+    -   name: INTEL
+        url: intel
+    -   name: 404
+        url: 404
+    -   name: SYSTEM
+        url: system

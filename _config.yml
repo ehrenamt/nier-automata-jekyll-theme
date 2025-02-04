@@ -1,0 +1,15 @@
+title:               NieR Automata Theme
+tagline:             'A NieR theme for Jekyll'
+description:          'A NieR theme for Jekyll'
+url:                 
+baseurl:             ''
+
+plugins:
+  - jekyll-assets
+
+sass:
+  style: compressed
+
+kramdown:
+  auto_ids: true
+  input: GFM

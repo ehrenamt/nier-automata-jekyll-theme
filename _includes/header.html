@@ -1,0 +1,48 @@
+<div class="overlay"></div>
+<div class="dark-overlay"></div>
+<nav>
+  <div class="hmenu-wrapper">
+    <div class="hmenu">
+      {% for item in site.data.navigation.nav %}
+      <a href="{{ item.url | relative_url }}" class="hmenu-item">
+        <div class="hmenu-content">
+          <div class="square"></div>
+          <div class="hmenu-text">{{ item.name }}</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</nav>
+
+<div class="div-line"></div>
+<div class="horizontal-dash">
+  {% for i in (1..24) %}
+  <div class="dash"></div>
+  {% endfor %}
+</div>
+<div class="horizontal-symbols">
+  {% for j in (1..23) %}
+  <div class="dots">
+    <div class="dots-svg"></div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="circle-wrapper">
+  <svg class="firstCircle" height="750" width="800" style="transform: rotate(180deg);">
+      <circle class="outerCircle" cx="100%" cy="100%" r="430" stroke="#b4af9a" stroke-width="1.5" fill="transparent"/>
+      <circle class="innerCircle" cx="100%" cy="100%" r="415" stroke="#b4af9a" stroke-width="1.5" fill="transparent"/>
+      <line class="middleLine" x1="100%" y1="100%" x2="2%" y2="2%" stroke="#b4af9a" stroke-width="1.5"/>
+      <line class="rightLine" x1="25%" y1="16%" x2="100%" y2="91%" stroke="#b4af9a" stroke-width="1.5"/>
+      <line class="leftLine" x1="7%" y1="16%" x2="91%" y2="100%" stroke="#b4af9a" stroke-width="1.5"/>
+  </svg>
+  
+  <svg class="secondCircle" height="750" width="800">
+      <circle class="outerCircle" cx="100%" cy="100%" r="430" stroke="#b4af9a" stroke-width="1.5" fill="transparent"/>
+      <circle class="innerCircle" cx="100%" cy="100%" r="415" stroke="#b4af9a" stroke-width="1.5" fill="transparent"/>
+      <line class="middleLine" x1="100%" y1="100%" x2="2%" y2="2%" stroke="#b4af9a" stroke-width="1.5"/>
+      <line class="rightLine" x1="25%" y1="16%" x2="100%" y2="91%" stroke="#b4af9a" stroke-width="1.5"/>
+      <line class="leftLine" x1="7%" y1="16%" x2="91%" y2="100%" stroke="#b4af9a" stroke-width="1.5"/>
+  </svg>
+</div>

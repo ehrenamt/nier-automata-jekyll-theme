@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html %}
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    {% include header.html %}
+    <section class="content">
+        <div>
+            <h1 class="large-title-content"> {{ page.title | default: "Untitled Post" }} 
+                {% if page.subtitle %}
+                <span class="page-subtitle">- {{ page.subtitle }}</span>
+                {% endif %}
+            </h1>
+        </div>
+        <div class="grid-container-wrapper">
+            <div class="grid-container-post">
+              <div class="column">
+                <div class="cmenu-outer">
+                  <div class="cmenu-inner">
+                    {% assign headers = content | split: '<h' %}
+                    {% for part in headers offset: 1 %}
+                    {% assign header = part | split: '>' %}
+                    {% assign headerText = header[1] | split: '</h' | first %}
+                    {% assign headerLevel = header[0] | slice: 0 %}
+                    <div class="cmenu-item-wrapper">
+                      <div class="cmenu-content">
+                        <div class="cmenu-item">❖ {{ headerText }}</div>
+                        <div class="cmenu-item">{{ headerLevel }}</div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="post-header">❖ {{ page.title }}</div>
+                <div class="column-content">
+                    {{ content }}
+                    <p class="post-text"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    {% include footer.html %}
+</body>
+</html>
