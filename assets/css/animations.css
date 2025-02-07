@@ -1,19 +1,35 @@
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+  from {
+    width: 0;
   }
+  to {
+    width: 100%;
+  }
+}
 
-  @keyframes revealRight {
-    from { width: 0 }
-    to { width: 100% }
+@keyframes revealRight {
+  from {
+    width: 0;
   }
+  to {
+    width: 100%;
+  }
+}
 
 @keyframes fadeIn {
-    from { color: transparent }
-    to { color: var(--main-div-colour) }
+  from {
+    color: transparent;
   }
+  to {
+    color: var(--main-div-colour);
+  }
+}
 
 @keyframes moveRight {
-    from { padding-left: 0px }
-    to { padding-left: 20px }
+  from {
+    padding-left: 0px;
+  }
+  to {
+    padding-left: 20px;
+  }
 }

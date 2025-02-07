@@ -13,7 +13,7 @@ It is currently a work-in-progress project. Although basic layouts have been imp
 
 [Jekyll](https://jekyllrb.com/) is a static site generator built with the [Ruby](https://www.ruby-lang.org/en/) programming language. It is especially useful for creating static blogs or featuring products.
 
-# Features
+## Features
 
 This theme supports
 
@@ -84,13 +84,13 @@ The following updates will eventually be implemented:
 - Add map / image layout
 - Add a second post layout ( or layout similar to one of the numerous in-game layouts)
 - Move code into correct files (currently it follows no stardard rules between layouts, includes, and .html templates.)
-- Reduce CSS
+- Modify and reduce CSS based on best practices (removing nested styles)
 
 There are no plans to update this beyond the listed improvements.
 
 ## License and Legal
 
-This project is open source under the MIT License. (The author would appreciate it if someone were to use this theme; it is just a random prject after all.) 
+This project is open source under the MIT License.
 
 All rights to the NieR: Automata franchise and IP belong to their respective owners.
 

@@ -2,8 +2,20 @@
 layout: stylesheet
 ---
 
-@import url(variables.css);
-@import url(animations.css);
+/* All the necessary CSS for this theme is in this file. */
+/* This is more efficient as CSS is a render-blocking resource.  */
+/* For development purposes, keep the variables.css and animations.css updated. */
+/* It will be usefor for development purposes and for using import statements. */
+/* This file will be minimized on build. The other .css files will not. */
+
+/* vairables */
+
+:root {
+  --main-bg-colour: rgb(205, 200, 176);
+  --main-div-colour: rgb(78, 75, 66);
+  --grey-2: rgb(180, 175, 154);
+  --beige-2: rgb(218, 212, 187);
+}
 
 /* tag selectors only */
 
@@ -13,7 +25,6 @@ a {
   cursor: url("../images/nier-cursor.png"), auto;
 }
 
-html,
 body {
   margin: 0;
   padding: 0;
@@ -212,7 +223,7 @@ nav {
   margin-bottom: 2px;
 }
 
-/* horizontal menu */
+/* Navigation / horizontal menu */
 
 .hmenu-wrapper {
   border-left: 10px solid var(--grey-2);
@@ -309,7 +320,7 @@ nav {
   font-weight: normal;
 }
 
-/* page decoration - hotizontal lines, dashes, dots */
+/* page decorations - horizontal lines, dashes, dots */
 
 .div-line {
   height: 2px;
@@ -498,6 +509,8 @@ nav {
   max-height: 51vh;
 }
 
+/* column class styling */
+
 .column-header {
   background-color: var(--main-div-colour);
   padding: 10px;
@@ -567,4 +580,42 @@ nav {
   margin: auto;
   background-size: contain; /* Adjust to fit */
   background-repeat: no-repeat; /* Prevents tiling */
+}
+
+/* animations */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes revealRight {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    color: transparent;
+  }
+  to {
+    color: var(--main-div-colour);
+  }
+}
+
+@keyframes moveRight {
+  from {
+    padding-left: 0px;
+  }
+  to {
+    padding-left: 20px;
+  }
 }
