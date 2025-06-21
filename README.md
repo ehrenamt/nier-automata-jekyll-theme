@@ -1,31 +1,32 @@
-# Nier: Automata Jekyll Website Theme
+# Nier: Automata Jekyll Theme
 
 ![](https://img.shields.io/badge/Framework-Jekyll-3f1f1f)
 ![](https://img.shields.io/badge/v0.1-WIP-CDC8B0)
 
 ![Image of this website's homepage, demonstrating the layout and visual details.](/assets/images/home.png)
 
-![Image of this website's 404 page, demonstrating the layout and visual details.](/assets/images/404.png)
+<!-- ![Image of this website's 404 page, demonstrating the layout and visual details.](/assets/images/404.png) -->
 
 This is a basic Jekyll theme built solely for aesthetic purposes and to replicate the NieR: Automata in-game menu.
 
-It is currently a work-in-progress project. Although basic layouts have been implemented, the code needs to be refactored, cleaned, and it could use more features - in its current state it is only a basic blog site.
+It is currently a work-in-progress project.
 
 [Jekyll](https://jekyllrb.com/) is a static site generator built with the [Ruby](https://www.ruby-lang.org/en/) programming language. It is especially useful for creating static blogs or featuring products.
 
 ## Features
 
-This theme supports
+There are no special features, this is just a fun project to replicate the NieR: Automata in-game menu on large screens. We're working on a mobile-friendly layout, but since the original game is meant for desktops, wide screens are the main focus.
 
-- CSS minification on build
-
-There are no special features. This is a basic Jekyll theme built solely for aesthetic purposes and to replicate the NieR: Automata in-game menu.
-
-There are certainly better and more accurate ways to replicate the main menu than vanilla HTML and CSS. Currently this is the stack it is written in. Additional Gems or CSS / JS libraries could potentially be added in updates for more advanced features and more game-accurate animations.
+There are certainly better and more accurate ways to replicate the main menu. Additional Gems or CSS / JS libraries could potentially be added in updates for more advanced features and more game-accurate animations.
 
 ## Installation
 
 - Clone this repository
+
+```
+git clone https://github.com/ehrenamt/Automata-Jekyll-Theme
+```
+
 - Run the following command
 ```
 bundle install
@@ -51,6 +52,7 @@ _data
 _includes
 _layouts
 _posts
+_sass
 .gitignore
 404.html
 Gemfile
@@ -64,7 +66,7 @@ Once the planned updates have been implemented, a detailed guide will be written
 
 ## Inaccuracies
 
-There are some key inaccuracies with this theme. The following is a non-exhaustive list of inaccuracies.
+There are some key inaccuracies with this theme regarding the actual in-game menu. The following is a non-exhaustive list of inaccuracies.
 
 - Lack of icons in the horizontal top menu items
 - Lack of arrow pointer on hover / selection of horizontal menu items

@@ -1,18 +1,22 @@
 ---
-layout: stylesheet
 ---
 
-/* All the necessary CSS for this theme is in this file. */
-/* This is more efficient as CSS is a render-blocking resource.  */
-/* For development purposes, keep the variables.css and animations.css updated. */
-/* It will be usefor for development purposes and for using import statements. */
-/* This file will be minimized on build. The other .css files will not. */
-
-/* vairables */
+@use "animations";
+@use "overlays";
+@use "bottomMessage";
 
 :root {
+
+  --clr-bg-0: rgb(205, 200, 176);
+  --clr-outline-0: rgb(78, 75, 66);
+
+  --clr-surface-0: rgb(180, 175, 154);
+  --clr-surface-1: rgb(218, 212, 187);;
+
+  // to be replaced
   --main-bg-colour: rgb(205, 200, 176);
   --main-div-colour: rgb(78, 75, 66);
+
   --grey-2: rgb(180, 175, 154);
   --beige-2: rgb(218, 212, 187);
 }
@@ -33,6 +37,7 @@ body {
   min-height: 100vh;
   line-height: 2;
   font: 100 1em/1 "Inter", sans-serif;
+  font-size: 16px;
   font-weight: 400;
   display: flex;
   flex-direction: column;
@@ -45,7 +50,7 @@ body {
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 1.75rem;
   padding: 0;
   margin: 0;
 }
@@ -119,42 +124,6 @@ nav {
   z-index: 0;
   flex-grow: 1;
   justify-content: space-between;
-}
-
-/* effects - grid and shadow overlays */
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 200%;
-  background-size: 5px 5px;
-  background-image: linear-gradient(
-      to right,
-      rgba(52, 52, 52, 0.03) 1px,
-      transparent 1px
-    ),
-    linear-gradient(to bottom, rgba(52, 52, 52, 0.03) 1px, transparent 1px);
-  z-index: 1040;
-  pointer-events: none;
-}
-
-.dark-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(78, 75, 66, 0.4),
-    transparent 25%,
-    transparent 75%,
-    rgba(78, 75, 66, 0.4)
-  );
-  z-index: 1050; /* this should be above the grid overaly */
-  pointer-events: none; /* Allow clicks to pass through the overlay */
 }
 
 /* column menus */
@@ -543,29 +512,6 @@ nav {
   background: var(--beige-2); /* Background of the scrollbar track */
 }
 
-/* bottom message */
-
-.bottom-message {
-  margin-top: 2.5%;
-  margin-bottom: 1.5%;
-  padding-left: 5px;
-  background-color: var(--beige-2);
-  border-left: 10px solid var(--main-div-colour);
-  box-shadow: 2px 3px 0px var(--main-div-colour);
-}
-
-.bottom-message-inner {
-  border-left: 3px solid var(--main-div-colour);
-}
-
-.bottom-message-text {
-  margin: 0;
-  padding: 10px;
-  padding-left: 20px;
-  color: var(--main-div-colour);
-  animation: moveRight 0.3s, fadeIn 0.3s;
-}
-
 .dots {
   width: calc((100vw - 90px) / 23);
   padding-left: calc((100vw - 550px) / 46);
@@ -580,42 +526,4 @@ nav {
   margin: auto;
   background-size: contain; /* Adjust to fit */
   background-repeat: no-repeat; /* Prevents tiling */
-}
-
-/* animations */
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes revealRight {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    color: transparent;
-  }
-  to {
-    color: var(--main-div-colour);
-  }
-}
-
-@keyframes moveRight {
-  from {
-    padding-left: 0px;
-  }
-  to {
-    padding-left: 20px;
-  }
 }
