@@ -3,6 +3,15 @@ tagline:             'A NieR theme for Jekyll'
 description:          'A theme that replicates the NieR: Automata in-game menu.'
 url:                 
 baseurl:             ''
+exclude:
+  - README.md
+
+permalink: pretty
+
+collections:
+  pages:
+      output: true
+      permalink: /:path
 
 plugins:
   - jekyll-assets
