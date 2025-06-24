@@ -1,0 +1,15 @@
+<!-- BEGIN bottom message -->
+{% if page.message %}
+<div class="bottom-message">
+    <div class="bottom-message-inner">
+        <p class="bottom-message-text">{{ page.message }}</p>
+    </div>
+</div>
+{% elsif site.data[page.layout].message %}
+<div class="bottom-message">
+    <div class="bottom-message-inner">
+        <p class="bottom-message-text">{{ site.data[page.layout].message }}</p>
+    </div>
+</div>
+{% endif %}
+<!-- END bottom message -->

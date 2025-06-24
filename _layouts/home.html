@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    {% include head.html %}
+    
+</head>
+<body>
+
+    {% include header.html %}
+
+    <section class="content">
+        
+        {% include widgets/page-title.html %}
+        <div class="grid-container-wrapper">
+            <div class="grid-container-map">
+
+                {{ content }}
+
+                <div class="cmenu-map">
+                    {% for navitem in site.data.home.cmenu %}
+                    
+                        <a class="cmenu-map-wrapper" href="{{ navitem.url }}">
+                            <div class="cmenu-map-item">
+                                <div class="cmenu-square"></div>
+                                <div class="cmenu-map-text">
+                                    {{ navitem.name }}
+                                </div>
+                            </div>
+                        </a>
+
+                    {% endfor %}
+                </div>
+
+                <div class="map">
+                    <!-- <img class="map-img" src="/assets/images/index.png" alt="Description of the image"> -->
+                </div>
+            </div>
+        </div>
+
+        {% include widgets/bottom-message.html %}
+
+    </section>
+
+    {% include footer.html %}
+
+</body>
+</html>

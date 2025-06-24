@@ -1,11 +1,9 @@
 # Nier: Automata Jekyll Theme
 
-![](https://img.shields.io/badge/Framework-Jekyll-3f1f1f)
-![](https://img.shields.io/badge/v0.1-WIP-CDC8B0)
-
 ![Image of this website's homepage, demonstrating the layout and visual details.](/assets/images/home.png)
 
-<!-- ![Image of this website's 404 page, demonstrating the layout and visual details.](/assets/images/404.png) -->
+> [!NOTE]
+> Currently does not work on mobile.
 
 This is a basic Jekyll theme built solely for aesthetic purposes and to replicate the NieR: Automata in-game menu.
 

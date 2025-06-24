@@ -1,6 +1,6 @@
 nav:
     -   name: HOME
-        url: index
+        url: /
     -   name: MAP
         url: image
     -   name: ABOUT

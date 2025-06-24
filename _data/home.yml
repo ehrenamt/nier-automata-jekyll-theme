@@ -1,0 +1,15 @@
+cmenu:
+    -   name: Map
+        url: image
+    -   name: About
+        url: about
+    -   name: Blog
+        url: blog
+    -   name: Intel
+        url: intel
+    -   name: 404
+        url: 404
+    -   name: System
+        url: system
+
+message: "Tip: This homepage image has a filter, so any image you place here should match the colour scheme!"
