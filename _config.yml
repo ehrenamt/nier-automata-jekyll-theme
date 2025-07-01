@@ -1,8 +1,9 @@
 title:               NieR Automata Theme
 tagline:             'A NieR theme for Jekyll'
 description:          'A unique theme that replicates the in-game menu from the critically acclaimed NieR: Automata'
-url:                 'https://ehrenamt.github.io/nier-automata-jekyll-theme/'
-baseurl:             ''
+domain:               'ehrenamt.github.io'
+url:                 'https://ehrenamt.github.io'
+baseurl:             '/nier-automata-jekyll-theme/'
 exclude:
   - README.md
 
