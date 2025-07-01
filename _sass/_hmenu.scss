@@ -1,0 +1,99 @@
+/* horizontal menu. */
+
+nav {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    margin: 0 45px; /* should match content padding or margin */
+    z-index: 2;
+}
+
+.hmenu {
+    // Parent is flex because we are using ::before.
+    // Therefore set this to grow: 1 to take remaining space
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    transition: background 0.35s ease;
+    margin-left: 20px; // space from nav::before
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.hmenu-item {
+    text-align: center;
+    color: var(--clr-font-0);
+    display: flex;
+    align-items: center; /* Centers vertically */
+    justify-content: center;
+
+    outline: none;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+
+    // temp
+    transition: box-shadow 0.35s ease, border 0.1s ease;
+}
+
+.hmenu-item:hover,
+.hmenu-item:focus {
+  position: relative; /* Ensure it can handle the box-shadow */
+  outline: none;
+  border-top: 3px solid var(--clr-surface-0);
+  border-bottom: 3px solid var(--clr-surface-0);
+
+}
+
+.hmenu-item:hover > .hmenu-content,
+.hmenu-item:focus > .hmenu-content {
+  background-color: var(--clr-surface-0);
+  color: var(--clr-font-1);
+  outline: none;
+
+  // test
+  background-position: left;
+}
+
+.hmenu-item:hover > .hmenu-content > .square,
+.hmenu-item:focus > .hmenu-content > .square {
+  background-color: var(--clr-bg-0);
+  color: var(--clr-font-0);
+  outline: none;
+}
+
+.hmenu-content {
+    min-width: 150px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 21px;
+    display: flex;
+    background-color: var(--clr-surface-1);
+
+    // temps
+    /* "to left" / "to right" - affects initial color */
+    background: linear-gradient(to left, var(--clr-surface-1) 50%, var(--clr-surface-0) 50%) right;
+    background-size: 200%;
+    transition: .1s ease-out;
+}
+
+.hmenu-text {
+  margin-left: 5px;
+}
+
+/* Display the left side border */
+nav::before {
+    position: relative;
+    content: ""; /* displays the pseudo element without any content */
+    border-left: 10px solid var(--clr-surface-1);
+    border-right: 3px solid var(--clr-surface-1);
+
+    width: 5px; /* empty gap between borders */
+    top: 6px;   /* displacement from top of the screen to align with menu items, not parent div */
+    height: 37px; /* height matches menu items, not parent div */
+    flex-grow: 0; /* do not grow and push the hmenu */
+}

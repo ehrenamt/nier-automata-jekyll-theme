@@ -1,18 +1,33 @@
 <div class="overlay"></div>
 <div class="dark-overlay"></div>
 <nav>
-  <div class="hmenu-wrapper">
     <div class="hmenu">
-      {% for item in site.data.navigation.nav %}
-      <a href="{{ item.url | relative_url }}" class="hmenu-item">
-        <div class="hmenu-content">
-          <div class="square"></div>
-          <div class="hmenu-text">{{ item.name }}</div>
-        </div>
-      </a>
-      {% endfor %}
+
+        {% for item in site.data.navigation.nav %}
+
+        <a href="{{ item.url | relative_url }}" class="hmenu-item">
+            <div class="hmenu-content">
+                <div class="square">
+                  {% if item.icon_text %}
+
+                  {{ item.icon_text}}
+
+                  {% else %}
+
+                  {{ "❖" }}
+
+                  <!-- <embed src="../assets/images/pb.svg"/> -->
+
+                  {% endif %}
+
+                </div>
+                <div class="hmenu-text">{{ item.name }}</div>
+            </div>
+        </a>
+
+        {% endfor %}
+
     </div>
-  </div>
 </nav>
 
 <div class="div-line"></div>

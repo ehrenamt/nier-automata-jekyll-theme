@@ -21,7 +21,7 @@
     color: transparent;
   }
   to {
-    color: var(--main-div-colour);
+    color: var(--clr-font-0);
   }
 }
 
@@ -32,4 +32,9 @@
   to {
     padding-left: 20px;
   }
+}
+
+@keyframes background-left-to-right {
+  0%   { width: 0%; }
+  100% { width: 200px; }
 }

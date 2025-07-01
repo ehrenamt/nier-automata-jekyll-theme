@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    {% include head.html %}
+    
+</head>
+<body>
+    {% include header.html %}
+    <section class="content">
+        <div>
+            <h1 class="large-title-content"> {{ page.title }} <span class="page-subtitle">- {{ page.subtitle | default: "Homepage" }}</span></h1>
+        </div>
+
+        <div class="bottom-message">
+            <div class="bottom-message-inner">
+                <!-- <p class="bottom-message-text">{{ content }}</p> -->
+                 {{ content }}
+            </div>
+        </div>
+
+    </section>
+
+    {% include footer.html %}
+</body>
+</html>

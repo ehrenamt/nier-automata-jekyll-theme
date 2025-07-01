@@ -3,7 +3,7 @@
 ![Image of this website's homepage, demonstrating the layout and visual details.](/assets/images/home.png)
 
 > [!NOTE]
-> Currently does not work on mobile.
+> Currently does not work on mobile. Mobile functionality is in development.
 
 This is a basic Jekyll theme built solely for aesthetic purposes and to replicate the NieR: Automata in-game menu.
 
@@ -46,16 +46,18 @@ Please follow the installation steps above. Your directory should look like this
 Name
 ----
 assets
+blog
 _data
 _includes
 _layouts
+_pages
 _posts
 _sass
 .gitignore
-404.html
+404.md
 Gemfile
 Gemfile.lock
-index.html
+index.md
 README.md
 _config.yml
 ```
@@ -64,26 +66,15 @@ Once the planned updates have been implemented, a detailed guide will be written
 
 ## Inaccuracies
 
-There are some key inaccuracies with this theme regarding the actual in-game menu. The following is a non-exhaustive list of inaccuracies.
+There are some key inaccuracies with this theme regarding the actual in-game menu. While this theme aims to replicate the in-game menu, I am also aiming to keep this theme simple enough and without heavy JavaScript use. As such certain animations or effects in the actual game menu are missing.
 
-- Lack of icons in the horizontal top menu items
-- Lack of arrow pointer on hover / selection of horizontal menu items
-- Lack of style change to horizontal menu items when said menu item is selected
-- Lack of left-to-right background colour change animation for column menus
-- Lack of left-to-right typewriter effect for column menus
-- Lack of arrow pointer on hover / selection of column menu items
-
-Some of these may be fixed in the future.
+I have also added a "default" layout which 
 
 ## Updates
 
 The following updates will eventually be implemented:
 
-- Add pagination to ```blog``` route
-- Fix system layout
-- Add map / image layout
-- Add a second post layout ( or layout similar to one of the numerous in-game layouts)
-- Move code into correct files (currently it follows no stardard rules between layouts, includes, and .html templates.)
+- Improve code structure and fix semantic HTML
 - Modify and reduce CSS based on best practices (removing nested styles)
 
 There are no plans to update this beyond the listed improvements.

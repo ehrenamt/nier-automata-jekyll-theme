@@ -1,5 +1,9 @@
 <!-- BEGIN page title -->
     <div>
-        <h1 class="large-title-content"> {{ page.title }} <span class="page-subtitle">- {{ page.subtitle | default: "Homepage" }}</span></h1>
+        <h1 class="large-title-content"> {{ page.title }}
+            {% if page.subtitle %}
+            <span class="page-subtitle">- {{ page.subtitle }}</span>
+            {% endif %}
+        </h1>
     </div>
 <!-- END page title -->

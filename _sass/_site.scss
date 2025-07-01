@@ -1,0 +1,74 @@
+/* Basic sitewide styles and tag selectors */
+/* tag selectors in alphabetical order */
+
+a {
+    text-decoration: none;
+    color: var(--clr-font-0);
+    cursor: url("../images/nier-cursor.png"), auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--clr-bg-0);
+    scroll-behavior: smooth;
+    min-height: 100vh;
+    line-height: 2;
+    font: 100 1em/1 "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    cursor: url("../images/nier-cursor.png"), auto;
+    max-width: 100%;
+    max-height: 100%;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+    min-width: 1366px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+html:hover {
+  cursor: url("../images/nier-cursor.png"), auto;
+}
+
+img {
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
+  background-color: rgb(218, 212, 187); /* Lightest color */
+  color: var(--clr-surface-0); /* Darkest color */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* other site-wide styles. These are shared multiple times, not only once, those are found in pageDecorations */
+
+.square {
+  background-color: var(--clr-surface-0);
+  margin: 0;
+  padding: 0;
+  height: 22px;
+  width: 21px;
+
+  color: var(--clr-font-1);
+}

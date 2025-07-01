@@ -3,7 +3,7 @@
   padding: 0;
   height: 3px;
   width: 10px;
-  background-color: var(--main-div-colour);
+  background-color: var(--clr-surface-0);
   z-index: 2;
 }
 
@@ -47,4 +47,48 @@
   margin: auto;
   background-size: contain; /* Adjust to fit */
   background-repeat: no-repeat; /* Prevents tiling */
+}
+
+
+/* effects - musical lines */
+
+.hidden {
+  visibility: none;
+}
+
+.firstCircle {
+  width: 50vw; /* Half the viewport width */
+  height: calc(50vw * 0.9375);
+  height: 100vh;
+}
+
+.secondCircle {
+  width: 50vw; /* Half the viewport width */
+  height: calc(50vw * 0.9375); /* Height based on 75/80 ratio */
+  height: 100vh;
+}
+
+.circle-wrapper {
+  pointer-events: none;
+  display: flex;
+  align-items: end;
+  position: fixed;
+  z-index: 0;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+/* page decorations - horizontal lines, dashes, dots */
+
+.div-line {
+  height: 2px;
+  width: 100%;
+  background-color: var(--clr-surface-0);
+  z-index: 2;
+}
+
+.thin-line {
+  height: 1px;
+  width: 100%;
+  background-color: var(--clr-surface-0);
 }

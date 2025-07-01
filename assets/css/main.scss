@@ -1,81 +1,37 @@
 ---
 ---
+@import "root";
+@import "site";
+@import "hmenu";
+@import "animations";
+@import "bottomMessage";
+@import "column";
+@import "overlays";
+@import "pageDecoration";
+@import "layoutshift";
+@import "largeMedia";
 
-@use "animations";
-@use "overlays";
-@use "bottomMessage";
-@use "pageDecoration";
-
-:root {
-
-  --clr-bg-0: rgb(205, 200, 176);
-  --clr-outline-0: rgb(78, 75, 66);
-
-  --clr-surface-0: rgb(180, 175, 154);
-  --clr-surface-1: rgb(218, 212, 187);;
-
-  // to be replaced
-  --main-bg-colour: rgb(205, 200, 176);
-  --main-div-colour: rgb(78, 75, 66);
-
-  --grey-2: rgb(180, 175, 154);
-  --beige-2: rgb(218, 212, 187);
+.layout-grid-post {
+    display: grid;
+    grid-template-columns: 1fr 2.25fr;
+    gap: 60px;
+    margin: 0 auto;
+    height: 100%;
+    padding-left: 20px;
+    border-left: 3px solid var(--clr-surface-1);
+    flex-grow: 1;
 }
 
-/* tag selectors only */
+.layout-grid-post::before {
+    content: "";
+    border-left: 10px solid var(--clr-surface-1);
+    border-right: 3px solid var(--clr-surface-1);
 
-a {
-  text-decoration: none;
-  color: var(--main-div-colour);
-  cursor: url("../images/nier-cursor.png"), auto;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--main-bg-colour);
-  scroll-behavior: smooth;
-  min-height: 100vh;
-  line-height: 2;
-  font: 100 1em/1 "Inter", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  display: flex;
-  flex-direction: column;
-  cursor: url("../images/nier-cursor.png"), auto;
-  max-width: 100%;
-  max-height: 100%;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none;
-  min-width: 1366px;
-}
-
-h1 {
-  font-size: 1.75rem;
-  padding: 0;
-  margin: 0;
-}
-
-h2 {
-  font-size: 22px;
-  padding: 0;
-  padding-left: 25px;
-  margin: 0;
-}
-
-body::-webkit-scrollbar {
-  display: none;
-}
-
-img {
-  filter: grayscale(100%);
-  mix-blend-mode: multiply;
-  background-color: rgb(218, 212, 187); /* Lightest color */
-  color: rgb(78, 75, 66); /* Darkest color */
-}
-
-html:hover {
-  cursor: url("../images/nier-cursor.png"), auto;
+    width: 5px;
+    margin-right: 20px;
+    background-color: transparent;
+    padding-left: 5px;
+    max-height: 51vh;
 }
 
 p {
@@ -87,222 +43,12 @@ p {
   line-height: 2;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav {
-  z-index: 2;
-  padding-top: 15px;
-  padding-bottom: 10px;
-}
-
-/* effects - musical lines */
-
-.hidden {
-  visibility: none;
-}
-
-.firstCircle {
-  width: 50vw; /* Half the viewport width */
-  height: calc(50vw * 0.9375);
-  height: 100vh;
-}
-
-.secondCircle {
-  width: 50vw; /* Half the viewport width */
-  height: calc(50vw * 0.9375); /* Height based on 75/80 ratio */
-  height: 100vh;
-}
-
-.circle-wrapper {
-  pointer-events: none;
-  display: flex;
-  align-items: end;
-  position: fixed;
-  z-index: 0;
-  flex-grow: 1;
-  justify-content: space-between;
-}
-
-/* column menus */
-
-.cmenu-outer {
-  display: flex;
-  height: 100%;
-  padding: 7px;
-}
-
-.cmenu-inner {
-  margin-top: 5px;
-  padding-top: 5px;
-  margin-bottom: 5px;
-  border-top: 2px solid var(--grey-2);
-  border-bottom: 2px solid var(--grey-2);
-  overflow-y: scroll;
-  width: 100%;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none;
-}
-
-.cmenu-inner::-webkit-scrollbar {
-  display: none;
-}
-
-.cmenu-item-wrapper {
-  padding-top: 3px;
-  padding-bottom: 3px;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  transition: background-color 0.35s ease, border 0.2s ease;
-}
-
-.cmenu-item-wrapper:hover {
-  border-top: 3px solid var(--main-div-colour);
-  border-bottom: 3px solid var(--main-div-colour);
-
-  .cmenu-content {
-    outline: none;
-
-    background-color: var(--main-div-colour);
-    color: var(--main-bg-colour);
-  }
-}
-
-.cmenu-content {
-  display: flex;
-  justify-content: space-between;
-  color: var(--main-div-colour);
-  padding: 0;
-  margin-top: 3px;
-  margin: 0;
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-  transition: background-color 0.15s ease;
-  transform-origin: left;
-}
-
-.cmenu-item {
-  font-size: 20px;
-  padding: 2px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 0;
-  margin-bottom: 2px;
-}
-
-/* Navigation / horizontal menu */
-
-.hmenu-wrapper {
-  border-left: 10px solid var(--grey-2);
-  padding-left: 5px;
-  margin-left: 45px;
-  margin-right: 45px;
-}
-
-.hmenu {
-  overflow: hidden;
-  white-space: nowrap;
-  display: flex;
-  justify-content: space-between;
-  /* justify-content: space-around; */
-  transition: background 0.35s ease;
-  padding-left: 20px;
-  border-left: 3px solid var(--grey-2);
-}
-
-.hmenu-item {
-  text-align: center;
-  color: var(--main-div-colour);
-  display: flex;
-  align-items: center; /* Centers vertically */
-  justify-content: center;
-  transition: background-color 0.35s ease, box-shadow 0.35s ease,
-    border 0.1s ease;
-  outline: none;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  box-sizing: content-box;
-}
-
-.hmenu-item:hover,
-.hmenu-item:focus {
-  position: relative; /* Ensure it can handle the box-shadow */
-  outline: none;
-  border-top: 3px solid var(--main-div-colour);
-  border-bottom: 3px solid var(--main-div-colour);
-}
-
-.hmenu-item:hover > .hmenu-content,
-.hmenu-item:focus > .hmenu-content {
-  background-color: var(--main-div-colour);
-  color: var(--main-bg-colour);
-  outline: none;
-}
-
-.hmenu-item:hover > .hmenu-content > .square,
-.hmenu-item:focus > .hmenu-content > .square {
-  background-color: var(--main-bg-colour);
-  outline: none;
-}
-
-.hmenu-content {
-  min-width: 150px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 21px;
-  display: flex;
-  background-color: var(--grey-2);
-}
-
-.hmenu-text {
-  margin-left: 5px;
-}
-
-.square {
-  background-color: var(--main-div-colour);
-  color: var(--main-bg-colour);
-  height: 22px;
-  width: 22px;
-}
-
-.cmenu-square {
-  background-color: var(--main-div-colour);
-  color: var(--main-bg-colour);
-  height: 22px;
-  width: 22px;
-}
-
-.cmenu-icon {
-  padding-right: 3px;
-}
 
 .post-text {
   margin: 0;
-  color: var(--main-div-colour);
+  color: var(--clr-font-0);
   line-height: 2.25;
   font-weight: normal;
-}
-
-/* page decorations - horizontal lines, dashes, dots */
-
-.div-line {
-  height: 2px;
-  width: 100%;
-  background-color: var(--main-div-colour);
-  z-index: 2;
-}
-
-.thin-line {
-  height: 1px;
-  width: 100%;
-  background-color: var(--main-div-colour);
 }
 
 /* page title */
@@ -311,12 +57,14 @@ nav {
   overflow: hidden;
   white-space: nowrap;
   font-size: 48px;
-  text-shadow: 7px 7px 0px var(--grey-2);
+  text-shadow: 7px 7px 0px var(--clr-surface-1);
   padding-top: 20px;
   padding-bottom: 20px;
   margin: 0;
   font-weight: normal;
   letter-spacing: 5px;
+
+  color: var(--clr-font-0);
 
   animation: typing 2.75s steps(65, end), fadeIn 0.2s steps(40, end);
 }
@@ -345,7 +93,7 @@ nav {
   margin: 0 auto;
   height: 100%;
   padding-left: 20px;
-  border-left: 3px solid var(--grey-2);
+  border-left: 3px solid var(--clr-surface-1);
   flex-grow: 1;
 }
 
@@ -356,15 +104,45 @@ nav {
   margin: 0 auto;
   height: 100%;
   padding-left: 20px;
-  border-left: 3px solid var(--grey-2);
+  border-left: 3px solid var(--clr-surface-1);
   flex-grow: 1;
+}
+
+.container-default::before {
+    content: "";
+    border-left: 10px solid var(--clr-surface-1);
+    border-right: 3px solid var(--clr-surface-1);
+
+    width: 5px;
+    margin-right: 20px;
+    background-color: transparent;
+    padding-left: 5px;
+
+    max-height: 62vh;
+}
+
+.container-default {
+    position: relative;
+  display: flex;
+  margin: 0 auto;
+  height: 100%;
+//   padding-left: 20px;
+//   border-left: 3px solid var(--clr-surface-1);
+  flex-grow: 1;
+}
+
+.column-fullscreen {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-surface-2);
+  height: 62vh;
 }
 
 .map {
   text-align: center;
   height: 100%;
   width: 100%;
-  background-color: var(--grey-2);
+  background-color: var(--clr-surface-1);
   min-height: 51vh;
   max-height: 51vh;
 }
@@ -391,17 +169,16 @@ nav {
 }
 
 .cmenu-map-wrapper:hover {
-  border-top: 2px solid var(--main-div-colour);
-  border-bottom: 2px solid var(--main-div-colour);
+  border-top: 2px solid var(--clr-surface-0);
+  border-bottom: 2px solid var(--clr-surface-0);
 
   .cmenu-map-item {
     outline: none;
 
-    background-color: var(--main-div-colour);
-    color: var(--main-bg-colour);
+    background-color: var(--clr-surface-0);    color: var(--clr-font-1);
 
     .cmenu-square {
-      background-color: var(--beige-2);
+      background-color: var(--clr-surface-2);
     }
   }
 }
@@ -411,7 +188,7 @@ nav {
   flex-direction: row;
   font-size: 22px;
   padding: 10px;
-  background-color: var(--grey-2);
+  background-color: var(--clr-surface-1);
 }
 
 .cmenu-map-text {
@@ -426,44 +203,25 @@ nav {
   margin: 0 auto;
   height: 100%;
   padding-left: 20px;
-  border-left: 3px solid var(--grey-2);
+  border-left: 3px solid var(--clr-surface-1);
   flex-grow: 1;
 }
 
 .grid-container-wrapper {
-  border-left: 10px solid var(--grey-2);
+  border-left: 10px solid var(--clr-surface-1);
   padding-left: 5px;
 }
 
-.column {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--beige-2);
-  /* height: 400px; fallback */
-  min-height: 51vh;
-  max-height: 51vh;
-}
-
-/* column class styling */
-
-.column-header {
-  background-color: var(--main-div-colour);
-  padding: 10px;
-  color: var(--main-bg-colour);
-  text-align: left;
-  font-size: 20px;
-}
-
 .post-header {
-  background-color: var(--grey-2);
+  background-color: var(--clr-surface-1);
   padding: 10px;
-  color: var(--main-div-colour);
+  color: var(--clr-font-0);
   text-align: left;
   font-size: 20px;
 }
 
 .column-content {
-  color: var(--main-div-colour);
+  color: var(--clr-font-0);
   font-size: 20px;
   padding: 20px;
   text-align: left;
@@ -475,5 +233,10 @@ nav {
 }
 
 .column-content::-webkit-scrollbar-track {
-  background: var(--beige-2); /* Background of the scrollbar track */
+  background: var(--clr-surface-2); /* Background of the scrollbar track */
 }
+
+.default-header {
+    padding: 0;
+}
+

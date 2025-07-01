@@ -1,0 +1,104 @@
+/* column class styling */
+
+.column {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-surface-2);
+  /* height: 400px; fallback */
+  min-height: 51vh;
+  max-height: 51vh;
+}
+
+.column-header {
+  background-color: var(--clr-surface-0);
+  padding: 10px;
+  color: var(--clr-font-1);
+  text-align: left;
+  font-size: 20px;
+}
+
+.cmenu-outer {
+  display: flex;
+  height: 100%;
+  padding: 7px;
+}
+
+.cmenu-inner {
+  margin-top: 5px;
+  padding-top: 5px;
+  margin-bottom: 5px;
+  border-top: 2px solid var(--clr-surface-1);
+  border-bottom: 2px solid var(--clr-surface-1);
+  overflow-y: scroll;
+  width: 100%;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+
+.cmenu-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.cmenu-item-wrapper {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transition: background-color border 1s ease-in;
+}
+
+.cmenu-item-wrapper:hover {
+  border-top: 3px solid var(--clr-surface-0);
+  border-bottom: 3px solid var(--clr-surface-0);
+
+  .cmenu-content {
+    outline: none;
+
+    // background-color: var(--main-div-colour);
+    color: var(--clr-bg-0);
+    background-position: left;
+
+  }
+}
+
+.cmenu-content {
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    color: var(--clr-font-0);
+    padding: 2px 0;
+    margin-top: 3px;
+    margin: 0;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    transform-origin: left;
+
+    /* "to left" / "to right" - affects initial color */
+    background: linear-gradient(to left, transparent 50%, var(--clr-surface-0) 50%) right;
+    background-size: 300%;
+    transition: .2s ease-out; /* this is a slower transition time than hmenu-content, because we want the animation to have a similar speed */
+
+    // testing
+    // animation: typing 1s steps(40, end), fadeIn 0.2s steps(40, end);
+}
+
+.cmenu-item {
+  font-size: 20px;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0;
+  margin-bottom: 2px;
+}
+
+.cmenu-square {
+  background-color: var(--clr-surface-0);
+  color: var(--clr-font-1);
+  height: 22px;
+  width: 22px;
+}
+
+.cmenu-icon {
+  padding-right: 3px;
+}

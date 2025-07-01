@@ -4,20 +4,36 @@
   margin-top: 2.5%;
   margin-bottom: 1.5%;
   padding-left: 5px;
-  background-color: var(--beige-2);
-  border-left: 10px solid var(--main-div-colour);
-  box-shadow: 2px 3px 0px var(--main-div-colour);
+  background-color: var(--clr-surface-2);
+  border-left: 10px solid var(--clr-surface-0);
+  box-shadow: 2px 3px 0px var(--clr-surface-0);
 }
 
 .bottom-message-inner {
-  border-left: 3px solid var(--main-div-colour);
+  border-left: 3px solid var(--clr-surface-0);
+}
+
+.bottom-message-inner > p {
+  margin: 0;
+  padding: 10px;
+  padding-left: 20px;
+  color: var(--clr-font-0);
+  animation: moveRight 0.3s, fadeIn 0.3s;
 }
 
 .bottom-message-text {
   margin: 0;
   padding: 10px;
   padding-left: 20px;
-  color: var(--main-div-colour);
+  color: var(--clr-font-0);
+  animation: moveRight 0.3s, fadeIn 0.3s;
+}
+
+.bottom-message-text > p {
+  margin: 0;
+  padding: 10px;
+  padding-left: 20px;
+  color: var(--clr-font-0);
   animation: moveRight 0.3s, fadeIn 0.3s;
 }
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% include head.html %}
+
+</head>
+<body>
+
+    {% include header.html %}
+
+    <section class="content">
+
+        {% include widgets/page-title.html %}
+
+		<div class="grid-container-wrapper">
+			<div class="grid-container-post">
+
+				<div class="column">
+					<div class="cmenu-outer">
+						<div class="cmenu-inner">
+
+							{% for post in paginator.posts %}
+
+							<div class="cmenu-item-wrapper">
+								<a class="cmenu-content" href="{{ post.url }}">
+									<div class="cmenu-item">❖ {{ post.title }}</div>
+								</a>
+							</div>
+
+							{% endfor %}
+
+						</div>
+					</div>
+				</div>
+				<div class="column">
+				<div class="post-header">❖ {{ paginator.posts[0].title }}</div>
+				<div class="column-content">
+					<p class="post-text">
+						{{ paginator.posts[0].content }}
+					</p>
+				</div>
+				</div>
+			</div>
+      
+        {% include widgets/bottom-message.html %}
+    
+    </section>
+
+    {% include footer.html %}
+
+</body>
+</html>

@@ -3,13 +3,18 @@ nav:
         url: /
     -   name: MAP
         url: image
+        icon_text: ⮛
     -   name: ABOUT
         url: about
+        icon_text: "?"
     -   name: BLOG
         url: blog
+        icon_text: ☲
     -   name: INTEL
         url: intel
+        icon_text: ⋁
     -   name: 404
         url: 404
     -   name: SYSTEM
         url: system
+        icon_text: ⏻
