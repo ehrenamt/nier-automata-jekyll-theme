@@ -7,13 +7,11 @@
 
 This is a basic Jekyll theme built solely for aesthetic purposes and to replicate the NieR: Automata in-game menu.
 
-It is currently a work-in-progress project.
-
 [Jekyll](https://jekyllrb.com/) is a static site generator built with the [Ruby](https://www.ruby-lang.org/en/) programming language. It is especially useful for creating static blogs or featuring products.
 
 ## Features
 
-There are no special features, this is just a fun project to replicate the NieR: Automata in-game menu on large screens. We're working on a mobile-friendly layout, but since the original game is meant for desktops, wide screens are the main focus.
+```config.yml``` is set up for pagination at ```/blog```. We're working on a mobile-friendly layout, but since the original game is meant for desktops, wide screens are the main focus.
 
 There are certainly better and more accurate ways to replicate the main menu. Additional Gems or CSS / JS libraries could potentially be added in updates for more advanced features and more game-accurate animations.
 
@@ -22,7 +20,7 @@ There are certainly better and more accurate ways to replicate the main menu. Ad
 - Clone this repository
 
 ```
-git clone https://github.com/ehrenamt/Automata-Jekyll-Theme
+git clone https://github.com/ehrenamt/nier-automata-jekyll-theme
 ```
 
 - Run the following command
@@ -64,12 +62,6 @@ _config.yml
 
 Once the planned updates have been implemented, a detailed guide will be written.
 
-## Inaccuracies
-
-There are some key inaccuracies with this theme regarding the actual in-game menu. While this theme aims to replicate the in-game menu, I am also aiming to keep this theme simple enough and without heavy JavaScript use. As such certain animations or effects in the actual game menu are missing.
-
-I have also added a "default" layout which 
-
 ## Updates
 
 The following updates will eventually be implemented:
@@ -77,7 +69,7 @@ The following updates will eventually be implemented:
 - Improve code structure and fix semantic HTML
 - Modify and reduce CSS based on best practices (removing nested styles)
 
-There are no plans to update this beyond the listed improvements.
+There are no plans to update this beyond the listed improvements. There are many noticeable inaccuracies when compared to the actual in-game menu, but I am not aimed for a perfect 1:1 replica, but rather something as close as possible with minimal JS.
 
 ## License and Legal
 
